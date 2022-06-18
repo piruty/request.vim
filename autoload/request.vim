@@ -1,7 +1,7 @@
 let s:request_result_buffer = 'REQUEST'
 
-function! request#request() abort
-  let res = webapi#http#get('https://google.com')
+function! request#request(url) abort
+  let res = webapi#http#get(a:url)
 
   if res.status != 200
     echo 'request failed. response status: ' . res.status
