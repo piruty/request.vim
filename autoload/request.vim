@@ -27,4 +27,5 @@ function! request#request() abort
 
   %delete _
   call setline(1, res.content)
+  %s/></>\r</g | filetype indent on | setf html | normal gg=G
 endfunction
